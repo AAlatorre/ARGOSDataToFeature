@@ -32,7 +32,18 @@ while lineString:
 
         # Get attributes from first line
         tagID = lineList[0]
-        break
+
+        # Get the next line. After running for one line, it will go to the next line.
+        line2String = inputFileObj.readline()
+        line2Data = line2String.split()
+
+        # Get attributes from second line
+        obsLat = line2Data[2]
+        obsLon = line2Data[5]
+        print(tagID,obsLat,obsLon)
     
     #Get the next line
     lineString = inputFileObj.readline()
+
+#Close the file object
+inputFileObj.close()
